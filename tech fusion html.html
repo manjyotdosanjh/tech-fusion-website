@@ -1,0 +1,1817 @@
+<!doctype html>
+<html lang="en">
+<head>
+<style>
+/* FORCE HEADER / NAVBAR TO WHITE */
+.navbar,
+.navbar.sticky-nav {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* MENU TEXT COLOR */
+.navbar .nav-link {
+    color: #000000 !important;
+}
+
+/* MENU HOVER + ACTIVE */
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: #0d6efd !important;
+}
+
+/* BRAND / LOGO TEXT COLOR (if any text) */
+.navbar-brand {
+    color: #000000 !important;
+}
+</style>
+
+<style>
+.panel-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.panel-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.panel-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+}
+
+.panel-card:hover img {
+    transform: scale(1.1);
+}
+
+.panel-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.1));
+    color: #fff;
+}
+
+.panel-overlay h5 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.panel-overlay p {
+    font-size: 14px;
+    margin-top: 6px;
+}
+</style>
+<style>
+html {
+    scroll-behavior: smooth;
+}
+</style>
+<style>
+.certificate-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    cursor: pointer;
+}
+
+.certificate-card img {
+    width: 100%;
+    max-height: 220px;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+.certificate-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 22px 50px rgba(0,0,0,0.25);
+}
+
+.certificate-card:hover img {
+    transform: scale(1.1);
+}
+
+.certificate-card h6 {
+    margin-top: 15px;
+    font-weight: 600;
+}
+</style>
+<style>
+.certificates-section {
+    position: relative;
+    background-color: #000000; /* solid black background */
+    background-image: none;    /* you can add image later */
+    padding: 80px 0;
+}
+
+/* CERTIFICATES HEADING */
+.certificates-title {
+    color: #ffffff;            /* WHITE text */
+    font-family: 'Karla', sans-serif;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto 50px auto;
+}
+/* CONTACT US NOW BUTTON (HEADER) */
+.contact-now-btn {
+    margin-left: auto;
+    padding: 10px 22px;
+    border-radius: 30px;
+    background: #f7b500;
+    color: #000000;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* HOVER EFFECT */
+.contact-now-btn:hover {
+    background: #ffcc33;
+    color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+/* FLOATING CONTACT US (WHATSAPP) BUTTON */
+.whatsapp-cta {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: #25D366;          /* WhatsApp green */
+    color: #ffffff;
+    padding: 14px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    z-index: 9999;
+    transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.whatsapp-cta:hover {
+    background: #1ebe5d;
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.4);
+    color: #ffffff;
+}
+#section_6 ~ .whatsapp-cta {
+    display: none;
+}
+/* Smooth hide/show animation */
+.whatsapp-cta {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: auto;
+}
+
+/* Hidden state */
+.whatsapp-cta.hide {
+    opacity: 0;
+    transform: translateY(15px);
+    pointer-events: none;
+}
+/* NAVBAR LOGO */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo {
+    height: 40px;   /* change if needed */
+    width: auto;
+}
+/* FORCE NAVBAR MENU HOVER TO BLUE */
+.navbar .navbar-nav .nav-link {
+    color: #000000 !important;
+    transition: color 0.3s ease;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link:focus,
+.navbar .navbar-nav .nav-link.active {
+    color: #0d6efd !important; /* BLUE */
+}
+
+/* ACTIVE MENU ITEM */
+.navbar .navbar-nav .nav-link.active {
+    color: #0d6efd !important; /* BLUE */
+}
+
+
+
+/* KEEP TEXT ABOVE IMAGE */
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+/* HERO SLIDESHOW OPACITY OVERLAY */
+#section_1 {
+    position: relative;
+}
+
+/* HERO SECTION LAYER FIX */
+#section_1 {
+    position: relative;
+}
+
+/* ================================
+   HERO SLIDESHOW – FINAL FIX
+================================ */
+
+/* Hero section */
+#section_1 {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Backstretch image layer */
+#section_1 .backstretch {
+    z-index: 0 !important;
+}
+
+/* Dark overlay (ONLY ONE) */
+#section_1 .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+/* Text above slideshow */
+#section_1 .container {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+/* TEXT ABOVE EVERYTHING */
+#section_1 .container {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* KEEP TEXT ABOVE OVERLAY */
+#section_1 .container {
+    position: relative;
+    z-index: 2;
+}
+/* HERO SLIDESHOW OPACITY – TEMPLATE-CORRECT FIX */
+#section_1 {
+    position: relative;
+}
+
+/* EXISTING OVERLAY – JUST ADJUST THIS */
+#section_1 .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7); /* 👈 CONTROL OPACITY HERE */
+    z-index: 1;
+}
+
+/* KEEP TEXT ABOVE OVERLAY */
+#section_1 .container {
+    position: relative;
+    z-index: 2;
+}
+/* ===== HERO SLIDESHOW OPACITY – HARD OVERRIDE ===== */
+
+#section_1 {
+    position: relative;
+}
+
+
+
+/* TEMPLATE OVERLAY – CONTROL OPACITY HERE */
+#section_1 .overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7) !important; /* 👈 CHANGE THIS */
+    opacity: 1 !important; /* force full opacity */
+    z-index: 1 !important;
+}
+
+/* FORCE TEXT TO FULL VISIBILITY */
+#section_1 h1,
+#section_1 p,
+#section_1 .container,
+#section_1 .row,
+#section_1 .col-lg-8 {
+    position: relative;
+    z-index: 2 !important;
+    opacity: 1 !important;
+}
+/* FORCE NAVBAR BACKGROUND TO WHITE */
+.navbar {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* MENU TEXT COLOR ON WHITE BACKGROUND */
+.navbar-nav .nav-link {
+  color: #000000 !important;
+}
+
+/* LOGO COLOR (if text logo is used) */
+.navbar-brand {
+  color: #000000 !important;
+}
+
+/* KEEP IT WHITE EVEN ON SCROLL */
+.sticky-nav {
+  background-color: #ffffff !important;
+}
+
+</style>
+<style>
+/* CONTACT ADDRESS HOVER EFFECT */
+.contact-info a {
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #0d6efd !important; /* blue */
+    text-decoration: underline;
+}
+
+/* Contact text hover only */
+.contact-info a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+/* ONLY TEXT changes color */
+.contact-info a:hover {
+    color: #0d6efd !important;
+    text-decoration: underline;
+}
+
+/* FORCE ICON COLOR – NEVER CHANGE */
+.contact-info i {
+    color: #f7b500 !important; /* ya jo bhi tumhara icon color ho */
+    transition: none !important;
+}
+/* EMAIL LINK – TEXT ONLY HOVER */
+.contact-info a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+/* Hover effect ONLY on text */
+.contact-info a:hover {
+    color: #0d6efd;              /* blue on hover */
+    text-decoration: underline; /* optional but clean */
+}
+
+/* ICON MUST NEVER CHANGE */
+.contact-info i {
+    color: #f7b500 !important;  /* your icon color */
+    transition: none !important;
+}
+/* ===== EMAIL HOVER – COLOR ONLY (NO UNDERLINE) ===== */
+
+.contact-info.email-link a {
+    color: #000000 !important;
+    text-decoration: none !important;
+}
+
+/* HOVER: COLOR CHANGE ONLY */
+.contact-info.email-link a:hover {
+    color: #0d6efd !important;
+    text-decoration: none !important; /* force remove underline */
+}
+
+/* ICON NEVER CHANGES */
+.contact-info.email-link i {
+    color: #f7b500 !important;
+    transition: none !important;
+}
+/* ===== QUICK LINKS – COLOR ONLY HOVER (NO UNDERLINE) ===== */
+
+.footer-menu-link {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none !important;
+    transition: color 0.3s ease;
+}
+
+/* Hover: color change ONLY */
+.footer-menu-link:hover {
+    color: #0d6efd !important; /* blue */
+    text-decoration: none !important; /* force no underline */
+}
+/* ===== FOOTER & CONTACT – EMAIL + ADDRESS ONLY (NO PHONES) ===== */
+
+/* Base: remove underline everywhere */
+.site-footer a,
+.contact-section a {
+    text-decoration: none !important;
+    transition: color 0.3s ease;
+}
+/* ===== QUICK LINKS – COLOR ONLY HOVER (NO UNDERLINE) ===== */
+
+.footer-menu-link {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none !important;
+    transition: color 0.3s ease;
+}
+
+/* Hover: color change ONLY */
+.footer-menu-link:hover {
+    color: #0d6efd !important; /* blue */
+    text-decoration: none !important; /* force no underline */
+}
+
+/* ❌ DISABLE hover on phone numbers */
+.site-footer a[href^="tel"],
+.contact-section a[href^="tel"] {
+    pointer-events: none;
+    color: inherit !important;
+}
+
+/* ✅ EMAIL + ADDRESS hover ONLY */
+.site-footer a[href^="mailto"],
+.site-footer a[href^="https://www.google.com/maps"],
+.contact-section a[href^="mailto"],
+.contact-section a[href^="https://www.google.com/maps"] {
+    pointer-events: auto;
+}
+
+/* Hover color (EMAIL + ADDRESS only) */
+.site-footer a[href^="mailto"]:hover,
+.site-footer a[href^="https://www.google.com/maps"]:hover,
+.contact-section a[href^="mailto"]:hover,
+.contact-section a[href^="https://www.google.com/maps"]:hover {
+    color: #0d6efd !important;
+    text-decoration: none !important;
+}
+/* ===== EMAIL & ADDRESS ONLY – NO PHONES ===== */
+
+/* Base */
+.site-footer a,
+.contact-section a {
+    text-decoration: none !important;
+    transition: color 0.3s ease;
+}
+
+/* ❌ PHONE NUMBERS: NO HOVER, NO COLOR CHANGE */
+.site-footer a[href^="tel"],
+.contact-section a[href^="tel"] {
+    color: inherit !important;
+    pointer-events: auto; /* still clickable */
+}
+
+/* ✅ EMAIL + MAP LINKS */
+.site-footer a[href*="mail.google.com"],
+.site-footer a[href*="google.com/maps"],
+.contact-section a[href*="mail.google.com"],
+.contact-section a[href*="google.com/maps"] {
+    pointer-events: auto;
+}
+
+/* HOVER COLOR – EMAIL & ADDRESS ONLY */
+.site-footer a[href*="mail.google.com"]:hover,
+.site-footer a[href*="google.com/maps"]:hover,
+.contact-section a[href*="mail.google.com"]:hover,
+.contact-section a[href*="google.com/maps"]:hover {
+    color: #0d6efd !important;
+    text-decoration: none !important;
+}
+/* ===== RESET BASE COLORS (NO FADE) ===== */
+
+/* Contact section text */
+.contact-section .contact-info a {
+    color: #000000 !important;   /* solid black */
+    text-decoration: none !important;
+}
+
+/* Footer text */
+.site-footer a {
+    color: #ffffff !important;   /* solid white */
+    text-decoration: none !important;
+}
+
+/* ===== PHONE NUMBERS – NO HOVER EFFECT ===== */
+.contact-section a[href^="tel"],
+.site-footer a[href^="tel"] {
+    color: inherit !important;
+}
+
+/* ===== EMAIL + ADDRESS HOVER ONLY ===== */
+
+/* Contact section */
+.contact-section a[href*="mail.google.com"]:hover,
+.contact-section a[href*="google.com/maps"]:hover {
+    color: #0d6efd !important;
+}
+
+/* Footer */
+.site-footer a[href*="mail.google.com"]:hover,
+.site-footer a[href*="google.com/maps"]:hover {
+    color: #0d6efd !important;
+}
+
+/* ===== ICONS NEVER CHANGE ===== */
+.contact-info i {
+    color: #f7b500 !important;
+}
+/* ===== GLOBAL FONT OVERRIDE ===== */
+body {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+/* Headings slightly stronger */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600;
+}
+
+/* Paragraphs smoother */
+p {
+    font-weight: 400;
+}
+/* ===== FONT SIZE NORMALIZATION (MATCH OLD KARLA SIZE) ===== */
+
+body {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 16px;            /* restores original body size */
+}
+
+/* Paragraphs */
+p {
+    font-size: 18px;            /* same as original template */
+    line-height: 1.6;
+}
+
+/* Headings – scaled down */
+h1 { font-size: 68px; }
+h2 { font-size: 42px; }
+h3 { font-size: 36px; }
+h4 { font-size: 32px; }
+h5 { font-size: 24px; }
+h6 { font-size: 22px; }
+
+/* Navbar menu text */
+.navbar-nav .nav-link {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* Buttons */
+button,
+.contact-now-btn {
+    font-size: 16px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600; /* instead of 700 */
+}
+/* ===== FINAL FONT + SIZE OVERRIDE (TEMPLATE SAFE) ===== */
+
+:root {
+  --body-font-family: 'Poppins', sans-serif;
+
+  /* Restore original Karla sizing */
+  --h1-font-size: 68px;
+  --h2-font-size: 42px;
+  --h3-font-size: 36px;
+  --h4-font-size: 32px;
+  --h5-font-size: 24px;
+  --h6-font-size: 22px;
+
+  --p-font-size: 18px;
+  --menu-font-size: 18px;
+  --copyright-text-font-size: 16px;
+}
+
+/* Slightly lighter feel */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+p {
+  font-weight: 400;
+}
+
+</style>
+<style>
+/* ===== FORCE FONT & SIZE (LAST OVERRIDE) ===== */
+
+* {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+/* Restore original template sizes */
+body {
+    font-size: 16px !important;
+}
+
+p {
+    font-size: 18px !important;
+    line-height: 1.6;
+}
+
+h1 { font-size: 68px !important; }
+h2 { font-size: 42px !important; }
+h3 { font-size: 36px !important; }
+h4 { font-size: 32px !important; }
+h5 { font-size: 24px !important; }
+h6 { font-size: 22px !important; }
+
+/* Navbar */
+.navbar-nav .nav-link {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+}
+/* HERO SUBTEXT – SOFTER WHITE */
+#section_1 p {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+/* ===== HERO TEXT ANIMATION ===== */
+
+/* Initial hidden state */
+#section_1 h1,
+#section_1 p {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+}
+
+/* Active (visible) state */
+#section_1.show-text h1,
+#section_1.show-text p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Slight delay for paragraph (looks premium) */
+#section_1.show-text p {
+    transition-delay: 0.25s;
+}
+/* ===== ABOUT SECTION DESIGN ===== */
+
+.about-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 45px 50px;
+    box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+    border-left: 6px solid #f7b500; /* industrial accent */
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Title styling */
+.about-title {
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Subtle divider under heading */
+.about-divider {
+    width: 70px;
+    height: 3px;
+    background: rgba(247, 181, 0, 0.6); /* less white, softer */
+    margin-bottom: 25px;
+}
+
+/* Paragraph spacing */
+.about-card p {
+    margin-bottom: 18px;
+    line-height: 1.7;
+    color: #444;
+}
+
+/* ===== FADE-UP ANIMATION ===== */
+.fade-up {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeUp 0.9s ease forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* ===== ABOUT SECTION TEXT ANIMATION (SAFE) ===== */
+
+.about-card {
+    animation: aboutFadeUp 0.9s ease forwards;
+}
+
+@keyframes aboutFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ===== ABOUT CARD HOVER EFFECT ===== */
+
+.about-card {
+    transition: 
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+/* Hover interaction */
+.about-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.15);
+}
+
+</style>
+<style>
+/* ===== ABOUT SECTION BACKGROUND – FINAL FIX ===== */
+
+#section_2 {
+    background: linear-gradient(
+        to bottom,
+        #eef2f6 0%,
+        #f7f9fc 50%,
+        #ffffff 100%
+    );
+    position: relative;
+}
+
+
+#section_2::after {
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.05), transparent);
+}
+/* ===== FIX ABOUT SECTION SPACING ===== */
+
+#section_2 {
+    padding-top: 120px;   /* reduce from template */
+    padding-bottom: 120px;
+}
+/* Center the About card */
+#section_2 .container {
+    display: flex;
+    justify-content: center;
+}
+/* ===== ABOUT SECTION BACKGROUND ===== */
+
+#section_2 {
+    background: linear-gradient(
+        to bottom,
+        #eef2f6 0%,
+        #f7f9fc 50%,
+        #ffffff 100%
+    );
+}
+
+/* PANEL MODAL SMOOTH ANIMATION */
+.panel-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  z-index: 9999;
+}
+
+.panel-modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.panel-modal-box {
+  background: #fff;
+  max-width: 600px;
+  width: 90%;
+  padding: 30px;
+  border-radius: 14px;
+  transform: scale(0.9) translateY(20px);
+  transition: transform 0.35s ease;
+}
+
+.panel-modal.show .panel-modal-box {
+  transform: scale(1) translateY(0);
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 22px;
+  cursor: pointer;
+}
+.service-overlay ul {
+  padding-left: 18px;
+  font-size: 15px;
+}
+/* =========================
+   SERVICES CARD DESIGN
+========================= */
+
+.service-card {
+  height: 260px;
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Hover – soft premium lift */
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 65px rgba(0,0,0,0.18);
+}
+
+/* Background images */
+.design-card {
+  background-image: url("https://images.unsplash.com/photo-1581091870627-3a89cdb4b1a9?auto=format&fit=crop&w=900&q=80");
+}
+
+.manufacturing-card {
+  background-image: url("https://images.unsplash.com/photo-1581091012184-7b1a1f8e1b7a?auto=format&fit=crop&w=900&q=80");
+}
+
+.testing-card {
+  background-image: url("https://images.unsplash.com/photo-1581092334433-58c4b5a1d58c?auto=format&fit=crop&w=900&q=80");
+}
+
+/* Overlay */
+.service-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.25)
+  );
+  color: #fff;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* Icons */
+.service-icon {
+  font-size: 36px;
+  color: #0d6efd; /* BLUE */
+  margin-bottom: 10px;
+}
+
+/* Headings */
+.service-overlay h4 {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* Text */
+.service-overlay p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.9);
+}
+/* ===== SERVICES CARD – CLEAN FINAL DESIGN ===== */
+
+.service-card {
+  background: #ffffff;               /* ✅ NO GRADIENT */
+  border-radius: 18px;
+  padding: 40px 35px;
+  height: 100%;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.12);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 28px 70px rgba(0,0,0,0.18);
+}
+
+/* ICON */
+.service-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  background: rgba(13, 110, 253, 0.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.service-icon-wrapper i {
+  font-size: 34px;
+  color: #0d6efd;                   /* ✅ BLUE ICON */
+}
+
+/* TEXT */
+.service-card h4 {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.service-card ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.service-card ul li {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  color: #444;
+}
+/* ===== CENTER NAVBAR MENU PROPERLY ===== */
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+}
+
+/* Center menu */
+.navbar-collapse {
+  flex-grow: 1;
+}
+
+/* Keep logo left */
+.navbar-brand {
+  margin-right: auto;
+}
+
+/* Keep button right */
+.contact-now-btn {
+  margin-left: auto;
+}
+/* ===== PANEL CARD VIEW MORE TEXT ===== */
+
+.panel-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.panel-overlay .view-more {
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.5px;
+    transition: all 0.35s ease;
+}
+
+/* Hover effect */
+.panel-card:hover .view-more {
+    color: #ffffff;
+    transform: translateX(6px);
+}
+
+</style>
+<style>
+/* ===== PANEL SECTION BACKGROUND ===== */
+#section_4 {
+  background: url("images/typesofpanels/bg.jpg")
+              center/cover no-repeat;
+  position: relative;
+}
+
+#section_4::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+}
+
+#section_4 .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== NEW PANEL CARD DESIGN ===== */
+.panel-box {
+  background: rgba(255,255,255,0.95);
+  border-radius: 16px;
+  padding: 40px 30px;
+  height: 100%;
+  text-align: center;
+  cursor: pointer;
+  border-top: 5px solid #0d6efd;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+  transition: all 0.35s ease;
+}
+
+.panel-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.4);
+}
+
+/* ICON */
+.panel-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  background: rgba(13,110,253,0.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel-icon i {
+  font-size: 34px;
+  color: #0d6efd;
+}
+
+/* TEXT */
+.panel-box h5 {
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.panel-box p {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* VIEW MORE */
+.panel-box .view-more {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #0d6efd;
+  transition: transform 0.3s ease;
+}
+
+.panel-box:hover .view-more {
+  transform: translateX(6px);
+}
+</style>
+
+
+
+
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- SEO -->
+<title>Electrical Control Panel Manufacturer in India | LT, MCC, PCC, PLC, VFD Panels</title>
+
+<meta name="description" content="Leading electrical control panel manufacturer offering LT Panels, MCC Panels, PCC Panels, PLC Automation Panels, APFC Panels and VFD Panels. 30+ years of experience in industrial electrical solutions.">
+
+<meta name="keywords" content="
+electrical control panel manufacturer,
+control panel manufacturer in india,
+lt panel manufacturer,
+mcc panel manufacturer,
+pcc panel manufacturer,
+plc automation panel,
+vfd panel manufacturer,
+apfc panel manufacturer,
+industrial electrical panels,
+power control panels,
+motor control center panels,
+electrical panel board manufacturer,
+automation control panels,
+custom electrical panels
+">
+
+<meta name="author" content="Tech Fusion">
+<meta name="robots" content="index, follow">
+
+
+
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-icons.css" rel="stylesheet">
+<link href="css/magnific-popup.css" rel="stylesheet">
+<link href="css/techfusion.css" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+<nav class="navbar fixed-top navbar-expand-lg">
+<div class="container">
+<a href="#section_1" class="navbar-brand">
+    <img src="C:\Users\HP\Downloads\Gemini_Generated_Image_xgczdmxgczdmxgcz-removebg-preview.png" alt="Tech Fusion Logo" class="navbar-logo">
+</a>
+
+
+
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+<ul class="navbar-nav mx-auto">
+<li class="nav-item"><a class="nav-link" href="#section_1">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="#section_2">About</a></li>
+<li class="nav-item"><a class="nav-link" href="#section_3">Services</a></li>
+<li class="nav-item"><a class="nav-link" href="#section_4">Panels</a></li>
+<li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+<li class="nav-item"><a class="nav-link" href="#section_6">Contact</a></li>
+</ul>
+<a href="#section_6" class="contact-now-btn">
+    Contact Us Now
+</a>
+</div>
+</div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section class="hero d-flex justify-content-center align-items-center" id="section_1">
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-12">
+<h1 class="text-white mb-4">
+Electrical Control Panel Manufacturer in Delhi
+</h1>
+
+<p class="text-white">
+Tech Fusion specializes in designing and manufacturing high-quality electrical control panels including LT, MCC, PCC, PLC, APFC and VFD panels for industrial and commercial applications across India.
+</p>
+
+
+</div>
+</div>
+</div>
+<div class="overlay"></div>
+</section>
+
+<!-- ABOUT -->
+<section class="about section-padding" id="section_2">
+<div class="container">
+        <div class="about-card fade-up">
+
+            <h2 class="mb-4 about-title">About Tech Fusion</h2>
+
+            <div class="about-divider"></div>
+
+      <p>
+Tech Fusion is a professionally managed electrical control panel manufacturing company based in Delhi, India, built on a strong foundation of engineering excellence and practical industry experience. With over <strong>30+ years of combined expertise</strong>, we specialize in delivering reliable and standards-compliant electrical control panel solutions.
+</p>
+
+<p>
+We operate as part of a well-established group of electrical solution providers and work in close association with our <strong>sister concern, Advanced Electricals</strong>. This long-standing association strengthens our technical capabilities, operational reliability, and understanding of diverse industrial requirements.
+</p>
+
+<p>
+Our experience spans across multiple industries, enabling us to design and manufacture electrical control panels that meet real-world operational challenges. We focus on precision engineering, quality workmanship, and strict adherence to safety and performance standards.
+</p>
+
+<p>
+Tech Fusion manufactures a comprehensive range of panels including <strong>LT Panels, MCC Panels, PCC Panels, PLC Automation Panels, APFC Panels, VFD Panels, and Distribution Panels</strong>, customized to suit industrial and commercial applications.
+</p>
+
+<p>
+Backed by a skilled technical team and robust quality processes, we continue to deliver dependable, efficient, and future-ready electrical control panel solutions that customers can trust.
+</p>
+
+
+        </div>
+    </div>
+</section>
+
+</div>
+</section>
+
+<!-- SERVICES -->
+<section class="services section-padding" id="section_3">
+  <div class="container">
+    <h2 class="mb-5 text-center">Our Services</h2>
+
+    <div class="row g-4">
+
+      <!-- SERVICE 1 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="service-card">
+          <div class="service-icon-wrapper">
+            <i class="bi bi-pencil-square"></i>
+          </div>
+          <h4>Control Panel Design</h4>
+          <ul>
+         <li>Custom electrical control panel design based on application, load calculations, and safety standards.</li>
+<li>Compliance with industrial electrical norms and client-specific technical requirements.</li>
+<li>Designs optimized for easy maintenance, future expansion, and operational reliability.</li>
+
+          </ul>
+        </div>
+      </div>
+
+      <!-- SERVICE 2 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="service-card">
+          <div class="service-icon-wrapper">
+            <i class="bi bi-gear-fill"></i>
+          </div>
+          <h4>Panel Manufacturing</h4>
+          <ul>
+            <li>Manufacturing of electrical control panels using high-quality components and proven assembly practices.</li>
+<li>Robust panel construction ensuring electrical safety, ventilation, and long service life.</li>
+<li>Strict quality control during fabrication and assembly stages.</li>
+
+          </ul>
+        </div>
+      </div>
+
+      <!-- SERVICE 3 -->
+      <div class="col-lg-4 col-md-6 mx-auto">
+        <div class="service-card">
+          <div class="service-icon-wrapper">
+            <i class="bi bi-shield-check"></i>
+          </div>
+          <h4>Testing & Quality</h4>
+          <ul>
+            <li>Electrical testing including insulation resistance, continuity, and functional verification.</li>
+<li>Quality inspection to ensure compliance with safety and performance standards.</li>
+<li>Final validation before dispatch to ensure reliable on-site operation.</li>
+
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TYPES OF PANELS -->
+<section class="work section-padding" id="section_4">
+  <div class="container">
+    <h2 class="mb-5 text-center text-white">
+      Types of Electrical Control Panels
+    </h2>
+
+    <div class="row g-4">
+
+      <!-- LT PANEL -->
+      <div class="col-lg-4 col-md-6">
+        <div class="panel-box"
+          onclick="openPanelDetails(
+            'LT Control Panel',
+            'LT Control Panels distribute electrical power safely from transformers to various circuits.',
+            'Ensures protection, fault isolation, and controlled power distribution.',
+            'Factories, commercial buildings, substations'
+          )">
+          <div class="panel-icon"><i class="bi bi-lightning-charge"></i></div>
+          <h5>LT Control Panel</h5>
+          <p>Low tension power distribution and protection system.</p>
+          <span class="view-more">View Details →</span>
+        </div>
+      </div>
+
+      <!-- MCC PANEL -->
+      <div class="col-lg-4 col-md-6">
+        <div class="panel-box"
+          onclick="openPanelDetails(
+            'MCC Panel',
+            'MCC Panels control and protect multiple motors from a centralized unit.',
+            'Improves operational safety and simplifies motor management.',
+            'Manufacturing plants, pumping stations'
+          )">
+          <div class="panel-icon"><i class="bi bi-cpu"></i></div>
+          <h5>MCC Panel</h5>
+          <p>Centralized motor control and protection.</p>
+          <span class="view-more">View Details →</span>
+        </div>
+      </div>
+
+      <!-- PCC PANEL -->
+      <div class="col-lg-4 col-md-6">
+        <div class="panel-box"
+          onclick="openPanelDetails(
+            'PCC Panel',
+            'PCC Panels manage high-capacity power distribution to downstream systems.',
+            'Handles heavy electrical loads reliably.',
+            'Large factories, infrastructure projects'
+          )">
+          <div class="panel-icon"><i class="bi bi-plug"></i></div>
+          <h5>PCC Panel</h5>
+          <p>Main power control and distribution panel.</p>
+          <span class="view-more">View Details →</span>
+        </div>
+      </div>
+
+      <!-- PLC PANEL -->
+      <div class="col-lg-4 col-md-6">
+        <div class="panel-box"
+          onclick="openPanelDetails(
+            'PLC Automation Panel',
+            'PLC Panels automate industrial processes using programmable logic controllers.',
+            'Enhances efficiency, accuracy, and real-time monitoring.',
+            'Automation lines, process industries'
+          )">
+          <div class="panel-icon"><i class="bi bi-diagram-3"></i></div>
+          <h5>PLC Automation Panel</h5>
+          <p>Smart automation and process control.</p>
+          <span class="view-more">View Details →</span>
+        </div>
+      </div>
+
+      <!-- APFC PANEL -->
+      <div class="col-lg-4 col-md-6">
+        <div class="panel-box"
+          onclick="openPanelDetails(
+            'APFC Panel',
+            'APFC Panels automatically correct power factor using capacitor banks.',
+            'Reduces energy loss and electricity penalties.',
+            'Industries, malls, commercial buildings'
+          )">
+          <div class="panel-icon"><i class="bi bi-bar-chart"></i></div>
+          <h5>APFC Panel</h5>
+          <p>Automatic power factor correction system.</p>
+          <span class="view-more">View Details →</span>
+        </div>
+      </div>
+
+      <!-- DISTRIBUTION PANEL -->
+      <div class="col-lg-4 col-md-6">
+        <div class="panel-box"
+          onclick="openPanelDetails(
+            'Distribution Panel',
+            'Distribution Panels distribute power to multiple sub-circuits safely.',
+            'Provides overload and short-circuit protection.',
+            'Residential, commercial, industrial buildings'
+          )">
+          <div class="panel-icon"><i class="bi bi-boxes"></i></div>
+          <h5>Distribution Panel</h5>
+          <p>Organized and safe power distribution.</p>
+          <span class="view-more">View Details →</span>
+        </div>
+      </div>
+
+      <!-- VFD PANEL (CENTER) -->
+      <div class="col-lg-4 col-md-6 mx-auto">
+        <div class="panel-box"
+          onclick="openPanelDetails(
+            'VFD Panel',
+            'VFD Panels control motor speed by varying frequency and voltage.',
+            'Saves energy and improves motor life.',
+            'HVAC systems, pumps, conveyors'
+          )">
+          <div class="panel-icon"><i class="bi bi-speedometer2"></i></div>
+          <h5>VFD Panel</h5>
+          <p>Variable speed motor control solution.</p>
+          <span class="view-more">View Details →</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- CERTIFICATIONS -->
+<section class="certificates-section" id="certifications">
+    <div class="container">
+
+        <h2 class="certificates-title">CERTIFICATES</h2>
+
+        <div class="row g-4 justify-content-center">
+
+            <div class="col-lg-4 col-md-6">
+                <div class="certificate-card">
+                    <img src="images\certificates\ce-certificate.jpeg" alt="CE Certification">
+                    <h6>CE Certification</h6>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+    <a href="images/certificates/iso-certificate.pdf"
+       target="_blank"
+       style="text-decoration: none;">
+
+        <div class="certificate-card">
+            <img src="images/certificates/iso-certificate.jpeg" alt="ISO Certification">
+            <h6>ISO Certification</h6>
+        </div>
+
+    </a>
+</div>
+
+
+        </div>
+    </div>
+</section>
+
+
+
+<!-- CONTACT -->
+<style>
+.contact-section {
+    background: linear-gradient(135deg, #f5f5f5, #eaeaea);
+    padding: 80px 0;
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 35px 80px rgba(0,0,0,0.25);
+}
+
+.contact-title {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.contact-info {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.contact-info i {
+    color: #f7b500;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #f7b500;
+    box-shadow: 0 0 0 3px rgba(247,181,0,0.25);
+}
+
+.contact-btn {
+    background: linear-gradient(135deg, #f7b500, #ffcc33);
+    border: none;
+    color: #000;
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+</style>
+
+<section class="contact-section" id="section_6">
+<div class="container">
+<div class="row justify-content-center">
+
+<div class="col-lg-10">
+<div class="contact-card">
+<div class="row align-items-center">
+
+<!-- LEFT INFO -->
+<div class="col-lg-5 mb-4 mb-lg-0">
+<h2 class="contact-title">Let’s Connect</h2>
+<p class="mb-4">
+Looking for reliable electrical control panel solutions?  
+Our team at <strong>Tech Fusion</strong> is ready to help.
+</p>
+
+<div class="contact-info">
+<i class="bi-telephone-fill"></i> 9319837798
+</div>
+<div class="contact-info">
+<i class="bi-telephone-fill"></i> 8287262997
+</div>
+<div class="contact-info email-link">
+    <i class="bi-envelope-fill"></i>
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=gurpreet.advanced@gmail.com"
+   target="_blank">
+    gurpreet@techfusion4u.com
+</a>
+
+</div>
+
+<div class="contact-info">
+    <i class="bi-geo-alt-fill"></i>
+    <a href="https://www.google.com/maps/place/Hanuman+mandir+Khyala+gaon/@28.6574284,77.0993527,18.26z/data=!4m6!3m5!1s0x390d05002a67ab63:0x8b891e38f7b94aad!8m2!3d28.6576369!4d77.1006788!16s%2Fg%2F11y9b5hx2z?entry=ttu"
+       target="_blank"
+       class="text-dark text-decoration-none">
+        Khyala Gaon, Near Hanuman Mandir
+    </a>
+</div>
+</div>
+
+<!-- RIGHT FORM -->
+<div class="col-lg-7">
+<form class="contact-form"
+      action="https://formsubmit.co/gurpreet.advanced@gmail.com"
+      method="POST">
+
+    <!-- FORM SUBMIT SETTINGS -->
+    <input type="hidden" name="_subject" value="New Contact from Tech Fusion Website">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+
+    <div class="row">
+
+        <div class="col-md-6 mb-3">
+            <input type="text"
+                   name="name"
+                   class="form-control"
+                   placeholder="Your Name"
+                   required>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <input type="tel"
+                   name="phone"
+                   class="form-control"
+                   placeholder="Phone Number"
+                   required>
+        </div>
+
+        <div class="col-12 mb-3">
+            <input type="email"
+                   name="email"
+                   class="form-control"
+                   placeholder="Email Address">
+        </div>
+
+        <div class="col-12 mb-4">
+            <textarea name="message"
+                      class="form-control"
+                      rows="4"
+                      placeholder="Tell us about your requirement"></textarea>
+        </div>
+
+        <div class="col-12 text-end">
+            <button type="submit" class="contact-btn">
+                Send Message
+            </button>
+        </div>
+
+    </div>
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+<div class="container">
+<div class="row">
+
+<div class="col-lg-4 col-12 mb-4">
+<h4 class="text-white">Tech Fusion</h4>
+<p class="text-white">
+<p class="text-white">
+Tech Fusion is an electrical control panel manufacturer in Delhi providing LT, MCC, PCC, PLC, APFC, VFD and distribution panels for industrial and commercial use.
+</p>
+
+</p>
+</div>
+
+<div class="col-lg-4 col-12 mb-4">
+<h5 class="text-white">Quick Links</h5>
+<ul class="footer-menu">
+<li><a href="#section_1" class="footer-menu-link">Home</a></li>
+<li><a href="#section_2" class="footer-menu-link">About Us</a></li>
+<li><a href="#section_3" class="footer-menu-link">Services</a></li>
+<li><a href="#section_4" class="footer-menu-link">Panels</a></li>
+<li><a href="#certifications" class="footer-menu-link">Certifications</a></li>
+<li><a href="#section_6" class="footer-menu-link">Contact Us</a></li>
+</ul>
+</div>
+
+<div class="col-lg-4 col-12">
+    <h5 class="text-light mb-3">Contact Us</h5>
+
+    <p class="text-light mb-1"><strong>Phone</strong></p>
+    <p class="mb-1">
+        <a href="tel:+919319837798" class="text-light text-decoration-none">
+            9319837798
+        </a>
+    </p>
+    <p class="mb-3">
+        <a href="tel:+918287262997" class="text-light text-decoration-none">
+            8287262997
+        </a>
+    </p>
+
+    <p class="text-light mb-1"><strong>Email</strong></p>
+    <p class="mb-3">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=gurpreet.advanced@gmail.com"
+   target="_blank">
+    gurpreet.advanced@gmail.com
+</a>
+    </p>
+
+    <p class="text-light mb-1"><strong>Address</strong></p>
+   <p class="text-light">
+    <a href="https://www.google.com/maps/place/Hanuman+mandir+Khyala+gaon/@28.6576419,77.09818,17z/data=!4m10!1m2!2m1!1sKhyala+Gaon+Near+Hanuman+Mandir+Delhi!3m6!1s0x390d05002a67ab63:0x8b891e38f7b94aad!8m2!3d28.6576369!4d77.1006788!15sCiVLaHlhbGEgR2FvbiBOZWFyIEhhbnVtYW4gTWFuZGlyIERlbGhpkgEMbWFudWZhY3R1cmVy4AEA!16s%2Fg%2F11y9b5hx2z?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
+       target="_blank"
+       class="text-light text-decoration-none">
+        Khyala Gaon, Near Hanuman Mandir
+    </a>
+</p>
+
+
+    <a href="#section_6" class="text-warning fw-semibold text-decoration-none">
+        Contact Us Now →
+    </a>
+</div>
+
+© 2026 Tech Fusion. All Rights Reserved.
+</p>
+</div>
+
+</div>
+</div>
+</footer>
+
+
+
+<!-- JAVASCRIPT FILES -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.backstretch.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/magnific-popup-options.js"></script>
+        <script src="js/click-scroll.js"></script>
+        <script src="js/custom.js"></script>
+      
+    <script>
+window.addEventListener("load", function () {
+    const contactSection = document.getElementById("section_6");
+    const whatsappBtn = document.getElementById("whatsappCTA");
+
+    if (!contactSection || !whatsappBtn) return;
+
+    function toggleWhatsApp() {
+        const rect = contactSection.getBoundingClientRect();
+        const isInView = rect.top < window.innerHeight && rect.bottom > 0;
+
+        if (isInView) {
+            whatsappBtn.classList.add("hide");
+        } else {
+            whatsappBtn.classList.remove("hide");
+        }
+    }
+
+    window.addEventListener("scroll", toggleWhatsApp);
+    toggleWhatsApp(); // initial check
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const navLinks = document.querySelectorAll(".navbar .nav-link");
+  const sections = [...navLinks].map(link => {
+    const id = link.getAttribute("href");
+    return document.querySelector(id);
+  });
+
+  function updateActiveMenu() {
+    let scrollPos = window.scrollY + 150;
+
+    sections.forEach((section, index) => {
+      if (!section) return;
+
+      const top = section.offsetTop;
+      const height = section.offsetHeight;
+
+      if (scrollPos >= top && scrollPos < top + height) {
+        navLinks.forEach(l => l.classList.remove("active"));
+        navLinks[index].classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", updateActiveMenu);
+  updateActiveMenu();
+});
+</script>
+
+<script>
+window.addEventListener("load", function () {
+    const heroSection = document.getElementById("section_1");
+    if (heroSection) {
+        heroSection.classList.add("show-text");
+    }
+});
+</script>
+<!-- PANEL DETAILS MODAL -->
+<div id="panelModal" class="panel-modal">
+  <div class="panel-modal-box">
+    <span class="close-btn" onclick="closePanelDetails()">×</span>
+
+    <h3 id="panelTitle"></h3>
+    <p id="panelDesc"></p>
+    <p><strong>Why it is used:</strong> <span id="panelWhy"></span></p>
+    <p><strong>Where it is used:</strong> <span id="panelWhere"></span></p>
+  </div>
+</div>
+
+
+
+<script>
+function openPanelDetails(title, desc, why, where) {
+  document.getElementById("panelTitle").innerText = title;
+  document.getElementById("panelDesc").innerText = desc;
+  document.getElementById("panelWhy").innerText = why;
+  document.getElementById("panelWhere").innerText = where;
+
+  document.getElementById("panelModal").classList.add("show");
+}
+
+function closePanelDetails() {
+  document.getElementById("panelModal").classList.remove("show");
+}
+</script>
+<script>
+document.getElementById("panelModal").addEventListener("click", function(e) {
+  if (e.target === this) {
+    closePanelDetails();
+  }
+});
+</script>
+<script>
+$(window).on("load", function () {
+  $("#section_1").backstretch([
+    "images/slide/slide.1.jpg",
+    "images/slide/slide.2.jpeg",
+    "images/slide/slide.3.jpeg"
+  ], {
+    duration: 5000,
+    fade: 1000
+  });
+});
+</script>
+
+
+
+
+
+<a href="https://wa.me/919319837798?text=Hello%20Tech%20Fusion,%20I%20am%20interested%20in%20your%20electrical%20control%20panel%20solutions."
+   target="_blank"
+   class="whatsapp-cta"
+   id="whatsappCTA">
+    WhatsApp Now
+</a>
+
+</body>
+</html>>
