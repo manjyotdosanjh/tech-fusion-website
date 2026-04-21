@@ -992,3 +992,16 @@ button:focus:not(:focus-visible) {
     justify-content: center;
   }
 }
+/* ===== HERO TEXT MOBILE FIX ===== */
+@media (max-width: 576px) {
+  #section_1 h1 {
+    font-size: 42px !important;   /* reduce size */
+    line-height: 1.15 !important; /* tight spacing */
+    word-break: break-word;       /* prevents overflow */
+  }
+
+  #section_1 p {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+  }
+}
