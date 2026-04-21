@@ -1005,3 +1005,38 @@ button:focus:not(:focus-visible) {
     line-height: 1.5 !important;
   }
 }
+/* ===== HERO MOBILE PERFECT FIT ===== */
+@media (max-width: 576px) {
+
+  #section_1 {
+    text-align: center;
+    padding-top: 140px;
+    padding-bottom: 80px;
+  }
+
+  #section_1 .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  #section_1 h1 {
+    font-size: 40px !important;
+    line-height: 1.15 !important;
+    margin-bottom: 18px !important;
+    word-break: break-word;
+  }
+
+  #section_1 p {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 0 !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+}
+
+/* Extra Small Phones */
+@media (max-width: 400px) {
+  #section_1 h1 {
+    font-size: 34px !important;
+  }
+}
